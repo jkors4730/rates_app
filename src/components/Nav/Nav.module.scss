@@ -1,0 +1,13 @@
+.container {
+    position: fixed;
+    bottom: 0;
+    height: 68px;
+    border-top: 1px lightgray solid;
+    background: white;
+    z-index: 100;
+}
+
+.img {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

@@ -1,0 +1,25 @@
+.list_item {
+    font-size: 14px;
+    border-left: none!important;
+    border-right: none!important;
+
+    .currency {
+        font-weight: bold;
+        color: #0b5ed7;
+    }
+
+    .badge {
+        display: inline-block;
+        margin-left: 10px;
+    }
+}
+
+.list_item:first-child {
+    border-top-right-radius: 0!important;
+    border-top-left-radius: 0!important;
+}
+
+.list_item:last-child {
+    border-bottom-right-radius: 0!important;
+    border-bottom-left-radius: 0!important;
+}

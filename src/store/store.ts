@@ -1,8 +1,12 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import loginReducer from './reducers/login/LoginSlice';
+import ratesReducer from './reducers/rates/RatesSlice';
+import ratesListReducer from './reducers/rates_list/RatesListSlice';
 
 const rootReducer = combineReducers( {
-    loginReducer
+    loginReducer,
+    ratesReducer,
+    ratesListReducer
 } );
 
 export const setupStore = () => {
