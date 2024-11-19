@@ -2,6 +2,7 @@ import { FC } from 'react';
 import { Badge, Col, ListGroup, Row } from 'react-bootstrap';
 import { Rate } from '../../../types/rate';
 import styles from './RatesListItem.module.scss';
+import Decimal from 'decimal.js';
 
 interface RateListItemProps {
     rate: Rate;
@@ -25,7 +26,7 @@ const RatesListItem:FC<RateListItemProps> = ({ rate }) => {
                     </div>
                 </Col>
                 <Col className='text-end'>
-                    <div>${rate.rateUsd}</div>
+                    <div>${new Decimal(rate.rateUsd).toFixed(18)}</div>
                 </Col>
             </Row>
         </ListGroup.Item>

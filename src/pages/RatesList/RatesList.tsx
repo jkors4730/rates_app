@@ -1,14 +1,15 @@
 import { FC, useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store/hooks/TypedHooks';
 import { fetchRates } from '../../store/reducers/rates/RatesActions';
-import { Container, Image, ListGroup } from 'react-bootstrap';
+import { Container, ListGroup } from 'react-bootstrap';
 import { RatesSortUnion, RatesTypeUnion } from '../../types/rates_list';
 import RatesListParams from '../../components/UI/RatesListParams/RateListParams';
 import RatesListItem from '../../components/UI/RatesListItem/RatesListItem';
 import { ratesListSetPage, ratesListSetQuantity, ratesListSetSort, ratesListSetType } from '../../store/reducers/rates_list/RatesListActions';
 import RatesListPagination from '../../components/UI/RatesListPagination/RatesListPagination';
-import loading from '../../assets/rates/rates_loading.svg';
 import styles from './RatesList.module.scss';
+import RatesLoading from '../../components/UI/RatesLoading/RatesLoading';
+import Error from '../../components/UI/Error/Error';
 
 const RatesList:FC = () => {
     const {page, type, quantity, sort} = useAppSelector( state => state.ratesListReducer );
@@ -68,23 +69,15 @@ const RatesList:FC = () => {
     //#endregion
 
     if ( isLoading ) {
-        return (
-        <Container className={styles.loading}>
-            <Image src={loading} fluid className={styles.img} />
-        </Container>
-        )
+        return <RatesLoading />
     }
 
     if ( error ) {
-        return (
-        <Container className={styles.loading}>
-            <div className='text-danger'>{error}</div>
-        </Container>
-        )
+        return <Error error={error} />
     }
 
     return (
-        <Container className={styles.container}>
+        <Container className={styles.container} fluid>
             <RatesListParams {...{ type, quantity, sort,
                 setType: setTypeHandler,
                 setQuantity: setQuantityHandler,

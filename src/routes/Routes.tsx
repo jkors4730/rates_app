@@ -29,7 +29,7 @@ const Routes:FC = () => {
           element: <Outlet />,
           children: [
             { index: true, element: <Login /> },
-            { path: '*', element: <NotFound /> }
+            { path: '*', element: <Login /> }
           ],
         },
       ])

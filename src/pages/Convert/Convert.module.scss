@@ -1,0 +1,45 @@
+.container {
+    padding-bottom: 68px;
+}
+
+.label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.br {
+    margin-top: 30px;
+    content: "A" !important;
+    display: block;
+    border: 1px #d3d3d361 solid;
+    margin-bottom: 20px;
+}
+
+.card { 
+    margin-top: 5vh;
+    text-align: center;
+    background: #F9F9F9!important;
+    border-radius: 0!important;
+    margin-bottom: 5vh;
+}
+
+.from {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.icon {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.to {
+    font-size: 24px;
+    font-weight: bold;
+    color: #0066FF;
+}
+
+.desc {
+    margin-top: 10px;
+    font-size: 16px;
+}
